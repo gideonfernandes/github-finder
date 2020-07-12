@@ -33,13 +33,24 @@ class App extends Component {
     this.setState({ users: response.data.items, loading: false })
   };
 
+  clearUsers = () => this.setState({ users: [], loading: false });
+
   render() {
+    const { users, loading } = this.state;
+    
     return (
       <div className="App">
         <Navbar title="Github Finder" icon="fab fa-github" />
         <main className='container'>
-          <Search searchUsers={this.searchUsers} />
-        	<Users loading={this.state.loading} users={this.state.users} />
+          <Search
+            searchUsers={this.searchUsers}
+            clearUsers={this.clearUsers}
+            showClear={users.length > 0 ? true : false }
+          />
+        	<Users
+            loading={loading}
+            users={users}
+          />
         </main>
       </div>
     )
