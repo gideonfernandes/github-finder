@@ -1,17 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import Spinner from '../layout/Spinner';
+import Repos from '../repos/Repos';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class User extends Component {
 	componentDidMount() {
 		this.props.getUser(this.props.match.params.username)
+		this.props.getUserRepos(this.props.match.params.username)
 	};
 
 	static propTypes = {
 		loading: PropTypes.bool.isRequired,
+		getUser: PropTypes.func.isRequired,
+		getUserRepos: PropTypes.func.isRequired,
 		user: PropTypes.object.isRequired,
-		getUser: PropTypes.func.isRequired
+		repos: PropTypes.array.isRequired
 	};
 
 	render() {
@@ -31,7 +35,7 @@ class User extends Component {
 			hireable
 		} = this.props.user
 
-		const { loading } = this.props
+		const { loading, repos } = this.props
 
 		if (loading) return <Spinner />
 
@@ -93,12 +97,15 @@ class User extends Component {
 						</ul>
 					</div>
 				</section>
+
 				<section className="card text-center">
 					<span className="badge badge-primary">Seguidores: {followers}</span>
 					<span className="badge badge-success">Seguindo: {following}</span>
 					<span className="badge badge-light">Repositórios Publicos: {public_repos}</span>
 					<span className="badge badge-dark">Gists Públicos: {public_gists}</span>
 				</section>
+
+				<Repos repos={repos} />
 			</Fragment>
 		)
 	};
