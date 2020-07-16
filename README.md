@@ -1,11 +1,32 @@
 # github-finder
- This project is a react app that, through the proposed entry, makes requests to the Github API by searching profiles on github and returning information and data, such as profile image, biography, latest repositories, etc. It was developed with the aim of studying the React JS library during the React Front To Back course, taught by @bradtraversy.
+
+## Project
+
+***EN:*** This project is a react app that, through the proposed entry, makes requests to the Github API by searching profiles on github and returning information and data, such as profile image, biography, latest repositories, etc. It was developed with the aim of studying the React JS library during the React Front To Back course, taught by Brad Traversy.
+
+***PT-BR:*** Este projeto é um react app que, através da entrada proposta, faz solicitações à API do Github pesquisando perfis no github e retornando informações e dados, como imagem de perfil, biografia, repositórios mais recentes, etc. Foi desenvolvido com o objetivo de estudar a biblioteca React JS durante o curso React Front To Back, ministrado por Brad Traversy.
+
+## Technologies
+
+This project was developed with the following technologies:
+
+- HTML
+- CSS
+- ReactJS
+***
+
+## Preview
+![preview](preview.png)
+***
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+Install app with all dependencies.
 
 ### `yarn start`
 
@@ -69,3 +90,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## License
+
+This project is under the MIT license.
